@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Tweet Now! 2: Multi-User</h1>
+
+  <% if session[:user_id] %>
+    <div>
+      <div class="container">
+        <form action="/" method="post">
+          <input type="text" name="tweet" placeholder="tweets?">
+          <input type="text" name="num" placeholder="num_minutes?">
+          <input type="submit" value="submit">
+        </form>
+      </div>
+      <p>
+        <button><a href="/sign_out">Sign Out</a></button>
+      </p>
+    </div>
+    <% else %>
+    <button><a href="/sign_in">Sign In with Twitter</a></button>
+    <% end %>
+
+  </div>

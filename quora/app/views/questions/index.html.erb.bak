@@ -1,0 +1,9 @@
+<h1> All Questions </h1>
+
+<p><% @questions.each do |question| %>
+[<%= question.score %>]<%= question.question %> Created At <%= time_ago_in_words(question.created_at) %> ago</p>
+<% end %>
+
+<%=link_to "Sort by highest rated", question_sort_path(sort_method: 'highest_rated')%><br/>
+<%= link_to "Sort by trending", question_sort_path(sort_method: 'trending') %>
+

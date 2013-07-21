@@ -1,0 +1,12 @@
+
+<div class="edit_note">
+
+  <form method="post" action="/notes/<%=@note.id%>">
+
+    <input class="new_title" type="text" name="note[title]"><br>
+    <textarea class="new_content" row="5" col="40" name="note[content]"></textarea>
+    <input type="hidden" name="_method" value="put">
+    <input class="edit_submit" type="submit" value="Edit">
+  </form>
+
+</div>

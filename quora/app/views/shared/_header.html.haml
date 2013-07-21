@@ -1,0 +1,6 @@
+%h1.left
+  -if !current_user
+    = link_to "Title", root_path
+  -else
+    =link_to "Title", questions_path
+= render 'shared/navigation'

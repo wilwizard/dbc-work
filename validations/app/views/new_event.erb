@@ -1,0 +1,18 @@
+<% if @errors %>
+<%= "<h3>ERRORS</h3>" %>
+<% @error_messages.each do |f, message| %>
+<%= "<p>#{f} #{message}</p>" %><br>
+<% end %>
+<% end %>
+
+
+
+<form action="/events/create" method="post" id="new_event">
+  
+  Event Title: <input name="event[title]" type="text"><br>
+  Organizer: <input name="event[organizer_name]" type="text"><br>
+  Email: <input name="event[organizer_email]" type="text"><br>
+  Date: <input name="event[date]" type="text"><br>
+  <input type="submit" value="Create">
+
+</form>

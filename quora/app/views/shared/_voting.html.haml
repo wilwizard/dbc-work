@@ -1,0 +1,3 @@
+= resource.score
+=link_to "UpVote", votes_path(resource_id: resource.id, resource: resource.class.to_s, value: 1),{class: 'upvote', method: "post", remote: true }
+=link_to "DownVote", votes_path(resource_id: resource.id, resource: resource.class.to_s, value: -1),{class: 'downvote', method: "post", remote: true } 

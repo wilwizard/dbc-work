@@ -1,0 +1,49 @@
+.container {
+  margin: 20px auto;
+  width: 900px;
+  padding: 0px 20px 20px 20px;
+}
+
+.post {
+  margin: 20px auto;
+  width: 900px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+
+nav {
+  background-color: lightGrey;
+  font-size: 14pt;
+}
+
+nav ul {
+  margin: 0;
+  display: inline;
+  /*padding: 12px;*/
+}
+
+nav .right-nav {
+  float: right;
+  padding-right: 12px;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 auto;
+  /*padding: 12px 0;*/
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.error {
+  background-color: Red;
+}
+
+

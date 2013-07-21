@@ -1,0 +1,13 @@
+%html
+  %head
+    %title Test App
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    #wrapper
+      .header
+        =render 'shared/header'
+      .container  
+        =render 'shared/alerts'
+        = yield

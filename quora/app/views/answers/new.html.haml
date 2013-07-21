@@ -1,0 +1,6 @@
+%div
+	= form_for([@question, @answer]) do |f|
+		=f.label :answer
+		=f.text_area :answer, placeholder: "Add a saucy response"
+		%br
+		=f.submit "Add Answer"

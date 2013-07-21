@@ -1,0 +1,8 @@
+.form-sessions
+  %h1.title Sign In
+  =form_for(:session, :url => sessions_path) do |f|
+    = f.text_field :email, :placeholder => "Email..."
+    = f.password_field :password, :placeholder => "Password..."
+    = f.submit "Sign In", :class => "btn btn-large btn-primary"
+  =link_to "Not a member?", new_user_path
+

@@ -1,0 +1,25 @@
+
+<div class="note">
+
+
+  <h4 class="title"><%=note.title%></h4><br>
+  <text class="content"><%=note.content%></text><br>
+  <input class="note_id" type="hidden" value=<%=note.id%>>
+  <ul>
+    <li>
+      <form class="edit" method="get" action="/notes/<%= note.id %>/edit">
+        <input type="submit" value="Edit">
+      </form>
+    </li>
+    <li>
+      <form class="delete" method="post" action="/notes/<%= note.id %>">
+        <input name='_method' type="hidden" value="delete">
+        <input type="submit" value="Delete">
+      </form>
+    </li>
+  </ul>
+
+
+
+
+</div>

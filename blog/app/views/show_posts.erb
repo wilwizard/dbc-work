@@ -1,0 +1,17 @@
+<% @posts.each do |post| %>
+
+  <div class="post">
+
+    <text><%= post.title %></text><br>  
+    <text><%= post.message %></text>
+    <ul class="tags">
+      <% post.tags.each do |tag| %>
+        <li><a href="/<%=tag.topic%>/posts"><%= tag.topic %></a></li>
+      <% end %>
+    </ul>
+
+  </div>
+
+<%end%>
+
+<a href="/posts/new">Create a Post</a>

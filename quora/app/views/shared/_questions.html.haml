@@ -1,0 +1,22 @@
+%ul.user-profile-questions
+  -questions.each do |question|
+    %li.user-question
+      %h3=link_to "#{question.question}", question_path(question)
+      =render :partial => 'shared/voting', :locals => {resource: question}
+    %br
+    -if question.answers.empty?
+      No answers available
+    -else
+      %ul.answers-userprofile
+        %b Answers 
+        -question.sorted_answers.each do |answer|
+          %li.reg-answer
+            -if (question.best_answer && answer.answer == question.best_answer.answer)      
+              %span.best-answer=answer.answer
+            -else
+              %span=answer.answer 
+            -if (current_user == question.user)
+            =link_to 'Best Answer', best_answer_path(:answer_id => answer.id), :method => :post, :class => 'bestanswer_link', :remote => true
+              %br
+            =render :partial => 'shared/voting', :locals => {resource: answer}
+

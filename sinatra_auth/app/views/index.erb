@@ -1,0 +1,15 @@
+<h2>Welcome!</h2>
+
+<% if @logged_in %>
+  <div class="container">
+  Current User: <%= @current_user.name %>
+  </div>
+
+  <% @users.each do |user| %>
+  <div class="container">
+    <%= user.name %>
+  </div>
+  <% end %>
+  <%end%>
+
+</div>

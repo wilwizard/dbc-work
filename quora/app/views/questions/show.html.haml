@@ -1,0 +1,23 @@
+%ul.user-answered-questions
+  %li.user-answered-question
+    %b=@question.question
+    =render :partial => 'shared/voting', :locals => {resource: @question}
+%ul.question-answers
+  -@question.answers.each do |a|  
+    -if (@question.best_answer && a.answer == @question.best_answer.answer)      
+      %li.best_answer_user_profile
+        %span=a.answer
+        -if (current_user == @question.user)
+        =link_to 'Best Answer', best_answer_path(:answer_id => a.id), :method => :post, :class => 'bestanswer_link_user_profile', :remote => true
+          %br
+          =render :partial => 'shared/voting', :locals => {resource: a}
+    -else
+      %li.answer
+        %span=a.answer
+        -if (current_user == @question.user)
+          =link_to 'Best Answer', best_answer_path(:answer_id => a.id), :method => :post, :class => 'bestanswer_link_user_profile', :remote => true
+          %br
+          =render :partial => 'shared/voting', :locals => {resource: a}
+  %br
+.post_answer
+  =link_to "Post an Answer", new_question_answer_path(@question), :class => "btn btn-large btn-success"

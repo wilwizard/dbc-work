@@ -1,0 +1,6 @@
+.form-sessions
+  %h1.title Post a Question
+  =form_for(@question) do |f|
+    = f.text_field :question, :placeholder => "Question"
+    = f.submit "Post", :class => "btn btn-large btn-primary"
+

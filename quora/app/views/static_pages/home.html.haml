@@ -1,0 +1,11 @@
+%section.login
+
+.form
+  %h1.title Sign Up
+  =form_for(User.new, :url => users_path) do |f|
+    = f.text_field :username, :placeholder => "Username..."
+    = f.text_field :email, :placeholder => "Email..."
+    = f.password_field :password, :placeholder => "Password.."
+    = f.password_field :password_confirmation, :placeholder => "Confirmation..."
+    = f.submit "Sign Up", :class => "btn btn-large btn-primary"
+  =link_to "Already a member?", new_session_path, :id => 'switch-form'

@@ -1,0 +1,7 @@
+<h1>All the posts</h1>
+
+<% @posts.each do |post| %>
+  <h3><a href="<%= post.url %>"><%= post.title %></a></h3>
+  <p>Posted by <a href="/users/<%= post.user.id %>"><%= post.user.name %></a></p>
+  <p><a href="/posts/<%= post.id %>">Comments</a></p>
+<% end %>
